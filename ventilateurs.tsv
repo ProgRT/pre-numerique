@@ -1,3 +1,6 @@
-Nom	Fabriquant	Mise_en_service
-MA-1	Puritan Benett	1967
-Servo 900 	Simens	1972
+Mise_en_service	Nom	Fabriquant
+1967	MA-1	Puritan Bennett
+1972	Servo 900	Siemens
+1978	MA-2	Puritan Bennett
+1985	Bear 5	Bear Medical
+1984	7200	Puritan Bennett

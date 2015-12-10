@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="timeline.css" />
 
 <style>
+
 svg {
 	border: 1px dashed black;
 	display: block;
@@ -15,50 +16,15 @@ svg {
 line {
 	stroke: black;
 }
+
 text {
 	text-anchor: middle;
 }
+
 </style>
 
-<svg class="timeline" width="90%" height="300px">
-</svg>
+<svg class="timeline" width="90%" height="300px"></svg>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.10/d3.js"></script>
 
-<script>
-
-
-var dates = [
-	1967,
-	1972,
-	1980,
-	1993,
-	2015
-	];
-
-var xscale = d3.scale.linear()
-	.domain([d3.min(dates), d3.max(dates)])
-	.range(['10%', '90%'])
-	;
-
-var svg = d3.select("svg");
-
-var timepoints = svg.selectAll("text")
-	.data(dates)
-	.enter()
-		.append("text")
-		.text(function(d){return d})
-	.attr("id", function(d){return "tl" + d})
-		.attr("y", 70)
-		.attr("x", function(d){return xscale(d)})
-		.style("text-alingn", "center")
-	;
-
-svg.append("line")
-	.attr("y1", 50)
-	.attr("y2", 50)
-	.attr("x1", xscale(d3.min(dates)))
-	.attr("x2", xscale(d3.max(dates)))
-	;
-
-</script>
+<script src="timeline.js"></script>
