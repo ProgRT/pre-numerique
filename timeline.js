@@ -1,6 +1,6 @@
 function drawTimePoints(error, data){
 
-	var lineHeight = 50;
+	var lineHeight = 10;
 	var tickHeight = 10;
 	var svg = d3.select("svg");
 
@@ -13,19 +13,29 @@ function drawTimePoints(error, data){
 		.range(['10%', '90%'])
 		;
 
-	var timepoints = svg.selectAll("text")
+	//-------------------------------
+	//  Time points labels
+	//-------------------------------
+	
+	var timepoints = svg.selectAll("text.timePoint")
 		.data(data)
 		.enter()
 			.append("text")
+			.attr("class", "timePoint")
 			.text(function(d){return d.Mise_en_service})
-		.attr("id", function(d){return "tl" + d.Nom})
-			.attr("y", lineHeight + tickHeight + 15)
+			.attr("id", function(d){return "tl" + d.Mise_en_service})
+			.attr("data-year", function(d){return d.Mise_en_service})
+			.attr("y", lineHeight + tickHeight + 20)
 			.attr("x", function(d){return xscale(d.Mise_en_service)})
 			.style("text-alingn", "center")
 			.append("title")
 				.text(function(d){return d.Fabriquant + " " + d.Nom})
 		;
 
+	//-------------------------------
+	//  Time points ticks lines
+	//-------------------------------
+	
 	var ticks = svg.selectAll("line.tick")
 		.data(data)
 		.enter()
@@ -36,12 +46,23 @@ function drawTimePoints(error, data){
 			.attr("x2", function(d){return xscale(d.Mise_en_service)})
 		;
 
+	//-------------------------------
+	//  Time line
+	//-------------------------------
+	
 	svg.append("line")
 		.attr("y1", lineHeight)
 		.attr("y2", lineHeight)
 		.attr("x1", "0%")
 		.attr("x2", "100%")
 		;
+}
+
+function highlight(year){
+	var target = d3.select('[data-year="' + year + '"]');
+
+	d3.selectAll(".timePoint").classed("highlight", false);
+	target.classed("highlight", true);
 }
 
 d3.tsv("ventilateurs.tsv", drawTimePoints);

@@ -1,0 +1,31 @@
+body {
+	background-color: black;
+}
+
+svg.timeline {
+	position: absolute;
+	bottom: 15px;
+	left: 0px;
+	width: 100%;
+	border: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.timeline line {
+	stroke: white;
+	stroke-width: 2px;
+}
+
+.timeline text {
+	fill: white;
+	text-anchor: middle;
+	font-weight: bold;
+	font-size: 16pt;
+	transition: all 0.5s;
+}
+
+text.highlight {
+	fill: green;
+}
