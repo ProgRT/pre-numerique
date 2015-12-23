@@ -14,18 +14,19 @@ svg.timeline {
 }
 
 .timeline line {
-	stroke: white;
+	stroke: gray;
 	stroke-width: 2px;
 }
 
 .timeline text {
-	fill: white;
+	fill: gray;
 	text-anchor: middle;
-	font-weight: bold;
-	font-size: 16pt;
+	font-weight: normal;
+	font-size: 12pt;
 	transition: all 0.5s;
 }
 
 text.highlight {
-	fill: green;
+	fill: white;
+	font-size: 16pt;
 }

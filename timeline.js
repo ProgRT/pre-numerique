@@ -10,7 +10,7 @@ function drawTimePoints(error, data){
 
 	var xscale = d3.scale.linear()
 		.domain([d3.min(data, f1), d3.max(data, f1)])
-		.range(['10%', '90%'])
+		.range(['5%', '95%'])
 		;
 
 	//-------------------------------
