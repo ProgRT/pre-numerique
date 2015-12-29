@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"-->
+  <!--meta name="viewport" content="width=1024, user-scalable=no"-->
+
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="styles/timeline.css">
+
+  <!--link rel="stylesheet" media="screen" href="themes/style/web-2.0.css"-->
+  <link rel="stylesheet" media="screen" href="themes/style/basic.css">
+
+
+  <!-- Required Modernizr file -->
+  <script src="js/modernizr.custom.js"></script>
+
+  <style>
+  </style>
+
+</head>
+
+<body>
+
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+	    <header>
+	      <h1>Inhalothérapie pré-numérique</h1>
+	      <h2>Nicolas Blais St-Laurent inh</h2>
+	    </header>
+    </section>
+
+    <section class="slide" data-date="1972">
+	    <img src="photo/Servo900-Cote.jpg"/>
+    </section>
+
+    <!-- End slides. -->
+
+  </div>
+
+<!-- Required JS files. -->
+<script src="js/jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+<script src="js/timeline.js"></script>
+<script src="/home/user1/Librairies JavaScript/js/d3.min.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+
+function slideChange(event, from, to){
+}
+$(document).bind("deck.change", slideChange);
+drawTimeLine("ventilateurs.tsv");
+</script>
+</body>
+</html>
