@@ -68,3 +68,10 @@ function highlight(year){
 function drawTimeLine(path){
 	d3.tsv(path, drawTimePoints);
 }
+
+function updateTimeLine(event, from, to){
+
+	var current = document.getElementsByClassName("slide")[to];
+	var year = current.attributes["data-date"].value;
+	highlight(year);
+}

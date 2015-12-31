@@ -29,15 +29,23 @@
 
     <!-- Begin slides. Just make elements with a class of slide. -->
 
-    <section class="slide">
+    <section class="slide" data-date="">
 	    <header>
 	      <h1>Inhalothérapie pré-numérique</h1>
 	      <h2>Nicolas Blais St-Laurent inh</h2>
 	    </header>
     </section>
 
+    <section class="slide" data-date="1967">
+	    <img src="photo/MA1-Cote.jpg"/>
+    </section>
+
     <section class="slide" data-date="1972">
 	    <img src="photo/Servo900-Cote.jpg"/>
+    </section>
+
+    <section class="slide" data-date="1984">
+	    <img src="photo/7200-Cote.jpg"/>
     </section>
 
     <!-- End slides. -->
@@ -56,9 +64,7 @@
     $.deck('.slide');
   });
 
-function slideChange(event, from, to){
-}
-$(document).bind("deck.change", slideChange);
+$(document).bind("deck.change", updateTimeLine);
 drawTimeLine("ventilateurs.tsv");
 </script>
 </body>
