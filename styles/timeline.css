@@ -1,0 +1,29 @@
+svg.timeline {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 100;
+}
+
+.timeline line {
+	stroke: white;
+	stroke-width: 2px;
+}
+
+.timeline text {
+	fill: white;
+	text-anchor: middle;
+	font-weight: normal;
+	font-size: 12pt;
+	transition: all 0.5s;
+}
+
+text.highlight {
+	fill: hsl(100, 100%, 40%);
+	font-size: 16pt;
+}
